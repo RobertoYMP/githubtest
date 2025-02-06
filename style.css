@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+/* Animación de rosas */
+.rose-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.rose {
+    position: absolute;
+    top: -10%;
+    font-size: 2rem;
+    animation: fall 10s linear infinite;
+}
+
+.rose:nth-child(1) { left: 5%; animation-delay: 0s; }
+.rose:nth-child(2) { left: 15%; animation-delay: 2s; }
+.rose:nth-child(3) { left: 25%; animation-delay: 4s; }
+.rose:nth-child(4) { left: 35%; animation-delay: 6s; }
+.rose:nth-child(5) { left: 45%; animation-delay: 8s; }
+.rose:nth-child(6) { left: 55%; animation-delay: 1s; }
+.rose:nth-child(7) { left: 65%; animation-delay: 3s; }
+.rose:nth-child(8) { left: 75%; animation-delay: 5s; }
+.rose:nth-child(9) { left: 85%; animation-delay: 7s; }
+.rose:nth-child(10) { left: 95%; animation-delay: 9s; }
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10%) rotate(0deg);
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    max-width: 90%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.gallery {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+    max-width: 800px;
+    width: 50%; 
+    padding: 20px;
+}
+
+.gallery img {
+    width: 50%; 
+    max-width: 300px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: #ff6f61;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.love-message {
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: 300;
+}
+
+.btn {
+    display: flex;
+    gap: 20px;
+}
+
+.btn a {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-yes {
+    background: #ff6f61;
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 111, 97, 0.4);
+}
+
+.btn-no {
+    background: #e0e0e0;
+    color: #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-yes:hover {
+    background: #ff4a3d;
+    transform: translateY(-3px);
+}
+
+.btn-no:hover {
+    background: #d0d0d0;
+    transform: translateY(-3px);
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .love-message {
+        font-size: 1.5rem;
+    }
+
+    .btn a {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .love-message {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
